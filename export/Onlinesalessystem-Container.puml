@@ -1,0 +1,65 @@
+@startuml(id=Onlinesalessystem-Container)
+title Online sales system - Containers
+
+skinparam {
+  shadowing false
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+hide stereotype
+left to right direction
+skinparam rectangle<<1>> {
+  BackgroundColor #08427b
+  FontColor #ffffff
+  BorderColor #052e56
+}
+skinparam rectangle<<12>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<13>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<2>> {
+  BackgroundColor #08427b
+  FontColor #ffffff
+  BorderColor #052e56
+}
+skinparam rectangle<<3>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
+}
+skinparam rectangle<<4>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
+}
+skinparam rectangle<<7>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+rectangle "==Admin\n<size:10>[Person]</size>\n\nSales site management" <<2>> as 2
+rectangle "==Customer\n<size:10>[Person]</size>\n\nCustomers with website accounts" <<1>> as 1
+rectangle "==Email system\n<size:10>[Software System]</size>\n\nThe Google email service about promotions, bills, advertisements" <<4>> as 4
+rectangle "==Transportion system\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<3>> as 3
+package "Online sales system\n[Software System]" {
+  rectangle "==API Application\n<size:10>[Container: ASP.NET core and C#]</size>\n\nUse it for the back-end" <<13>> as 13
+  rectangle "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, customers, bills" <<12>> as 12
+  rectangle "==Web-Application\n<size:10>[Container: JS and VueJs]</size>\n\nDelivers the static content of shoes website" <<7>> as 7
+}
+13 .[#707070,thickness=2].> 12 : "Reads from and writes [JDBC]"
+13 .[#707070,thickness=2].> 4 : "Sends Email using"
+13 .[#707070,thickness=2].> 3 : "Process Orders"
+2 .[#707070,thickness=2].> 7 : "Login"
+1 .[#707070,thickness=2].> 7 : "Register or Login"
+4 .[#707070,thickness=2].> 1 : "Sends email to"
+3 .[#707070,thickness=2].> 1 : "Sends shoes"
+7 .[#707070,thickness=2].> 13 : "Makes API call to"
+@enduml
