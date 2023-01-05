@@ -10,52 +10,62 @@ skinparam {
 }
 hide stereotype
 left to right direction
-skinparam rectangle<<33>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<23>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<45>> {
+skinparam rectangle<<44>> {
   BackgroundColor #1168bd
   FontColor #ffffff
   BorderColor #0b4884
 }
-skinparam database<<35>> {
+skinparam rectangle<<11>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<22>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<34>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<24>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<14>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<48>> {
   BackgroundColor #1168bd
   FontColor #ffffff
   BorderColor #0b4884
 }
-skinparam rectangle<<13>> {
+skinparam rectangle<<26>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<25>> {
+skinparam database<<38>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
+}
+skinparam rectangle<<16>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<15>> {
+skinparam rectangle<<29>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<28>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<17>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<19>> {
+skinparam rectangle<<18>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
@@ -65,60 +75,50 @@ skinparam rectangle<<4>> {
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<41>> {
-  BackgroundColor #1168bd
-  FontColor #ffffff
-  BorderColor #0b4884
-}
-skinparam rectangle<<31>> {
+skinparam rectangle<<20>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<10>> {
+skinparam rectangle<<32>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<21>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, customers, bills" <<35>> as 35
-rectangle "==Message system\n<size:10>[Software System]</size>\n\nInformation of bills" <<45>> as 45
-rectangle "==Transportation system\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<41>> as 41
+database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, customers, bills" <<38>> as 38
+rectangle "==Message system\n<size:10>[Software System]</size>\n\nInformation of bills" <<48>> as 48
+rectangle "==Transportation system\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<44>> as 44
 rectangle "==Web Application\n<size:10>[Container: JS and VueJs]</size>\n\nDelivers the static content of shoes website" <<4>> as 4
 package "API Application\n[Container: ASP.NET core and C#]" {
-  rectangle "==Bill Component\n<size:10>[Component]</size>\n\nProvides functions such as viewing, deleting, editing all bills." <<33>> as 33
-  rectangle "==Bill Controller\n<size:10>[Component]</size>\n\nAllows users to view the latest paid bill and old bills." <<19>> as 19
-  rectangle "==Cart Controller\n<size:10>[Component]</size>\n\nAllows users to view products added to the cart, manage it." <<15>> as 15
-  rectangle "==Category Controller\n<size:10>[Component]</size>\n\nCategorizes the products in the website." <<21>> as 21
-  rectangle "==Information Component\n<size:10>[Component]</size>\n\nProvides functions such as sending necessary information to the Transportation system and sending information of bills to users." <<23>> as 23
-  rectangle "==Manager Component\n<size:10>[Component]</size>\n\nProvides functions such as filtering products following categories, adding to favorite lists, viewing product details, and adding to cart." <<28>> as 28
-  rectangle "==Order Component\n<size:10>[Component]</size>\n\nProvides functions such as editing, deleting products in the cart, making payments." <<31>> as 31
-  rectangle "==Register Controller\n<size:10>[Component]</size>\n\nAllows users to register to use all functions of the web." <<10>> as 10
-  rectangle "==Security Component\n<size:10>[Component]</size>\n\nProvides functionality related to register, signing in etc." <<25>> as 25
-  rectangle "==Sign In Controller\n<size:10>[Component]</size>\n\nAllows users to login to the website." <<13>> as 13
-  rectangle "==View Controller\n<size:10>[Component]</size>\n\nAllows users to view list of products and interact with product." <<17>> as 17
+  rectangle "==Bill Component\n<size:10>[Component]</size>\n\nProvides functions such as viewing, deleting, editing all bills." <<34>> as 34
+  rectangle "==Bill Controller\n<size:10>[Component]</size>\n\nAllows users to view the latest paid bill and old bills." <<20>> as 20
+  rectangle "==Cart Controller\n<size:10>[Component]</size>\n\nAllows users to view products added to the cart, manage it." <<16>> as 16
+  rectangle "==Category Controller\n<size:10>[Component]</size>\n\nCategorizes the products in the website." <<22>> as 22
+  rectangle "==Information Component\n<size:10>[Component]</size>\n\nProvides functions such as sending necessary information to the Transportation system and sending information of bills to users." <<24>> as 24
+  rectangle "==Manager Component\n<size:10>[Component]</size>\n\nProvides functions such as filtering products following categories, adding to favorite lists, viewing product details, and adding to cart." <<29>> as 29
+  rectangle "==Order Component\n<size:10>[Component]</size>\n\nProvides functions such as editing, deleting products in the cart, making payments." <<32>> as 32
+  rectangle "==Register Controller\n<size:10>[Component]</size>\n\nAllows users to register to use all functions of the web." <<11>> as 11
+  rectangle "==Security Component\n<size:10>[Component]</size>\n\nProvides functionality related to register, signing in etc." <<26>> as 26
+  rectangle "==Sign In Controller\n<size:10>[Component]</size>\n\nAllows users to login to the website." <<14>> as 14
+  rectangle "==View Controller\n<size:10>[Component]</size>\n\nAllows users to view list of products and interact with product." <<18>> as 18
 }
-33 .[#707070,thickness=2].> 35 : "Reads from and writes to"
-19 .[#707070,thickness=2].> 33 : "Uses"
-19 .[#707070,thickness=2].> 23 : "Uses"
-15 .[#707070,thickness=2].> 31 : "Uses"
-21 .[#707070,thickness=2].> 28 : "Uses"
-23 .[#707070,thickness=2].> 45 : "Sends"
-23 .[#707070,thickness=2].> 41 : "Sends"
-28 .[#707070,thickness=2].> 35 : "Reads from and writes to"
-31 .[#707070,thickness=2].> 35 : "Reads from and writes to"
-10 .[#707070,thickness=2].> 25 : "Uses"
-25 .[#707070,thickness=2].> 35 : "Reads from and writes to"
-13 .[#707070,thickness=2].> 25 : "Uses"
-17 .[#707070,thickness=2].> 28 : "Uses"
-4 .[#707070,thickness=2].> 19 : "Make API calls to"
-4 .[#707070,thickness=2].> 15 : "Make API calls to"
-4 .[#707070,thickness=2].> 21 : "Make API calls to"
-4 .[#707070,thickness=2].> 10 : "Make API calls to"
-4 .[#707070,thickness=2].> 13 : "Make API calls to"
-4 .[#707070,thickness=2].> 17 : "Make API calls to"
+34 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+20 .[#707070,thickness=2].> 34 : "Uses"
+20 .[#707070,thickness=2].> 24 : "Uses"
+16 .[#707070,thickness=2].> 32 : "Uses"
+22 .[#707070,thickness=2].> 29 : "Uses"
+24 .[#707070,thickness=2].> 48 : "Sends"
+24 .[#707070,thickness=2].> 44 : "Sends"
+29 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+32 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+11 .[#707070,thickness=2].> 26 : "Uses"
+26 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+14 .[#707070,thickness=2].> 26 : "Uses"
+18 .[#707070,thickness=2].> 29 : "Uses"
+4 .[#707070,thickness=2].> 20 : "Make API calls to"
+4 .[#707070,thickness=2].> 16 : "Make API calls to"
+4 .[#707070,thickness=2].> 22 : "Make API calls to"
+4 .[#707070,thickness=2].> 11 : "Make API calls to"
+4 .[#707070,thickness=2].> 14 : "Make API calls to"
+4 .[#707070,thickness=2].> 18 : "Make API calls to"
 @enduml

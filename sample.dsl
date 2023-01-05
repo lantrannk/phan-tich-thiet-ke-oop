@@ -8,7 +8,11 @@ workspace {
 
             webapp = container "Web Application" "Delivers the static content of shoes website" "JS and VueJs"{
                 user -> this "Register or Login"
+                
+               }
+            pageapp = container "Single Page Application Admin" "Server static website assets to customer" "Apache"{
                 admin -> this "Login"
+                
                }
                 
             
@@ -52,6 +56,9 @@ workspace {
 
             
            
+            }
+            pageapi = container "API Administration" "Use it for the back-end" "ASP.NET core and C#"{
+             pageapp -> this "Make API calls to"
             }
 
             data = container "Database" "Store products, customers, bills" "SQL server 2019" "Cylinder" {
