@@ -1,0 +1,87 @@
+@startuml(id=Onlinesalessystem-APIAdministration-Component)
+title Online sales system - API Administration - Components
+
+skinparam {
+  shadowing false
+  arrowFontSize 10
+  defaultTextAlignment center
+  wrapWidth 200
+  maxMessageSize 100
+}
+hide stereotype
+top to bottom direction
+skinparam rectangle<<44>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<46>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<48>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<38>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<7>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<50>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<40>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<52>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<42>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam database<<54>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
+}
+database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, category, customers, bills, accounts, etc" <<54>> as 54
+rectangle "==Single Page Application Admin\n<size:10>[Container: Apache]</size>\n\nServer static website assets to customer" <<7>> as 7
+package "API Administration\n[Container: ASP.NET core and C#]" {
+  rectangle "==Account Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting accounts." <<48>> as 48
+  rectangle "==Account Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all accounts in the website." <<40>> as 40
+  rectangle "==Categories Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all category in the website." <<44>> as 44
+  rectangle "==Category Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting category." <<52>> as 52
+  rectangle "==Customer Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting customers." <<50>> as 50
+  rectangle "==Customer Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all customer in the website." <<42>> as 42
+  rectangle "==Product Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting products." <<46>> as 46
+  rectangle "==Product Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all products in the website." <<38>> as 38
+}
+48 .[#707070,thickness=2].> 54 : "Reads from and writes to"
+40 .[#707070,thickness=2].> 48 : "Uses"
+44 .[#707070,thickness=2].> 52 : "Uses"
+52 .[#707070,thickness=2].> 54 : "Reads from and writes to"
+50 .[#707070,thickness=2].> 54 : "Reads from and writes to"
+42 .[#707070,thickness=2].> 50 : "Uses"
+46 .[#707070,thickness=2].> 54 : "Reads from and writes to"
+38 .[#707070,thickness=2].> 46 : "Uses"
+7 .[#707070,thickness=2].> 40 : "Make API calls to"
+7 .[#707070,thickness=2].> 44 : "Make API calls to"
+7 .[#707070,thickness=2].> 42 : "Make API calls to"
+7 .[#707070,thickness=2].> 38 : "Make API calls to"
+@enduml

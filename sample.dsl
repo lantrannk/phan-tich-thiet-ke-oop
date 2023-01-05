@@ -1,21 +1,21 @@
 workspace {
-
+ 
     model {
-        user = person "Customer" "Customers with website accounts"
+        user = person "Customer" "Customers with website accounts" "customer"
         admin = person "Admin" "Sales site management"
-        
+       
         softwareSystem = softwareSystem "Online sales system" "Customers visit the website to view products or make purchases Admin will manage and update the website."  {
-
+ 
             webapp = container "Web Application" "Delivers the static content of shoes website" "JS and VueJs"{
                 user -> this "Register or Login"
-                
+               
                }
             pageapp = container "Single Page Application Admin" "Server static website assets to customer" "Apache"{
                 admin -> this "Login"
-                
+               
                }
-                
-            
+               
+           
             api = container "API Application" "Use it for the back-end" "ASP.NET core and C#"{
                 register = component "Register Controller" "Allows users to register to use all functions of the web." {
                     webapp -> this "Make API calls to"
@@ -35,7 +35,7 @@ workspace {
                 category = component "Category Controller" "Categorizes the products in the website." {
                     webapp -> this "Make API calls to"
                 }
-
+ 
                 info = component "Information Component" "Provides functions such as sending necessary information to the Transportation system and sending information of bills to users." {
                     bill -> this "Uses"
                 }
@@ -53,48 +53,86 @@ workspace {
                 bills = component "Bill Component" "Provides functions such as viewing, deleting, editing all bills." {
                     bill -> this "Uses"
                 }
-
-            
+ 
+           
            
             }
             pageapi = container "API Administration" "Use it for the back-end" "ASP.NET core and C#"{
              pageapp -> this "Make API calls to"
+                product = component "Product Controller" "Allows administrators to manage all products in the website." {
+                    pageapp -> this "Make API calls to"
+                }
+                account = component "Account Controller" "Allows administrators to manage all accounts in the website." {
+                    pageapp -> this "Make API calls to"
+                }
+                customer = component "Customer Controller" "Allows administrators to manage all customer in the website." {
+                    pageapp -> this "Make API calls to"
+                }
+                categories = component "Categories Controller" "Allows administrators to manage all category in the website." {
+                    pageapp -> this "Make API calls to"
+                }
+              
+ 
+                productmanage = component "Product Component" "Provide functions such as adding, editing, deleting products." {
+                    product -> this "Uses"
+                }
+                 accountmanage = component "Account Component" "Provide functions such as adding, editing, deleting accounts." {
+                    account -> this "Uses"
+                    
+                }
+                 customermanage = component "Customer Component" "Provide functions such as adding, editing, deleting customers." {
+                   customer -> this "Uses"
+                    
+                }
+                 categorymanage = component "Category Component" "Provide functions such as adding, editing, deleting category." {
+                    categories -> this "Uses"
+                }
+                
+ 
+           
+           
+             
             }
-
-            data = container "Database" "Store products, customers, bills" "SQL server 2019" "Cylinder" {
+ 
+            data = container "Database" "Store products, category, customers, bills, accounts, etc" "SQL server 2019" "Cylinder" {
                 // info -> this "Reads from and writes to"
                 security -> this "Reads from and writes to"
                 manage -> this "Reads from and writes to"
                 order -> this "Reads from and writes to"
                 bills -> this "Reads from and writes to"
-            }         
+                productmanage -> this "Reads from and writes to"
+                accountmanage -> this "Reads from and writes to"
+                customermanage -> this "Reads from and writes to"
+                categorymanage -> this "Reads from and writes to"
+            }    
+        pageapi -> data "Sends"
+ 
         }
-
-        manager = softwareSystem "Transportation system" "Deliver shoes to customers" {
+ 
+        manager = softwareSystem "Transportation System" "Deliver shoes to customers" {
             info -> this "Sends"
         }
         message = softwareSystem "Message system" "Information of bills" {
             info -> this "Sends"
         }
-        
-        
+       
        
     }
-
+ 
     views {
         systemContext softwareSystem "Customer" {
             include *
             autolayout lr
-            
+           
         }
-      
-        
+     
+       
         styles {
             element "Person" {
                 shape person
                 background #08427b
                 color #ffffff
-
+ 
             }
             element "Software System" {
                 background  #1168bd
@@ -109,20 +147,21 @@ workspace {
                 background #1168bd
                 color #ffffff
             }
-
+ 
         }
-    
+   
        
-
+ 
         container softwareSystem  {
             include *
             autolayout lr
         }
-        component Api {
+        component api {
             include *
             autolayout lr
         }
-        
+        component pageapi {
+            include *
+            autoLayout
     }                
 }
-

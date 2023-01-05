@@ -10,17 +10,17 @@ skinparam {
 }
 hide stereotype
 left to right direction
-skinparam rectangle<<44>> {
+skinparam rectangle<<22>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<66>> {
   BackgroundColor #1168bd
   FontColor #ffffff
   BorderColor #0b4884
 }
 skinparam rectangle<<11>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<22>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
@@ -40,27 +40,12 @@ skinparam rectangle<<14>> {
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam rectangle<<48>> {
-  BackgroundColor #1168bd
-  FontColor #ffffff
-  BorderColor #0b4884
-}
 skinparam rectangle<<26>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam database<<38>> {
-  BackgroundColor #1168bd
-  FontColor #ffffff
-  BorderColor #0b4884
-}
 skinparam rectangle<<16>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
-skinparam rectangle<<29>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
@@ -70,24 +55,39 @@ skinparam rectangle<<18>> {
   FontColor #000000
   BorderColor #9a9a9a
 }
+skinparam rectangle<<29>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
 skinparam rectangle<<4>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
+}
+skinparam rectangle<<70>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
 }
 skinparam rectangle<<20>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
+skinparam database<<54>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
+}
 skinparam rectangle<<32>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
 }
-database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, customers, bills" <<38>> as 38
-rectangle "==Message system\n<size:10>[Software System]</size>\n\nInformation of bills" <<48>> as 48
-rectangle "==Transportation system\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<44>> as 44
+database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, category, customers, bills, accounts, etc" <<54>> as 54
+rectangle "==Message system\n<size:10>[Software System]</size>\n\nInformation of bills" <<70>> as 70
+rectangle "==Transportation System\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<66>> as 66
 rectangle "==Web Application\n<size:10>[Container: JS and VueJs]</size>\n\nDelivers the static content of shoes website" <<4>> as 4
 package "API Application\n[Container: ASP.NET core and C#]" {
   rectangle "==Bill Component\n<size:10>[Component]</size>\n\nProvides functions such as viewing, deleting, editing all bills." <<34>> as 34
@@ -102,17 +102,17 @@ package "API Application\n[Container: ASP.NET core and C#]" {
   rectangle "==Sign In Controller\n<size:10>[Component]</size>\n\nAllows users to login to the website." <<14>> as 14
   rectangle "==View Controller\n<size:10>[Component]</size>\n\nAllows users to view list of products and interact with product." <<18>> as 18
 }
-34 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+34 .[#707070,thickness=2].> 54 : "Reads from and writes to"
 20 .[#707070,thickness=2].> 34 : "Uses"
 20 .[#707070,thickness=2].> 24 : "Uses"
 16 .[#707070,thickness=2].> 32 : "Uses"
 22 .[#707070,thickness=2].> 29 : "Uses"
-24 .[#707070,thickness=2].> 48 : "Sends"
-24 .[#707070,thickness=2].> 44 : "Sends"
-29 .[#707070,thickness=2].> 38 : "Reads from and writes to"
-32 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+24 .[#707070,thickness=2].> 70 : "Sends"
+24 .[#707070,thickness=2].> 66 : "Sends"
+29 .[#707070,thickness=2].> 54 : "Reads from and writes to"
+32 .[#707070,thickness=2].> 54 : "Reads from and writes to"
 11 .[#707070,thickness=2].> 26 : "Uses"
-26 .[#707070,thickness=2].> 38 : "Reads from and writes to"
+26 .[#707070,thickness=2].> 54 : "Reads from and writes to"
 14 .[#707070,thickness=2].> 26 : "Uses"
 18 .[#707070,thickness=2].> 29 : "Uses"
 4 .[#707070,thickness=2].> 20 : "Make API calls to"
