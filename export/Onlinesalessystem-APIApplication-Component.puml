@@ -10,17 +10,17 @@ skinparam {
 }
 hide stereotype
 left to right direction
-skinparam rectangle<<22>> {
-  BackgroundColor #dddddd
-  FontColor #000000
-  BorderColor #9a9a9a
-}
 skinparam rectangle<<66>> {
   BackgroundColor #1168bd
   FontColor #ffffff
   BorderColor #0b4884
 }
 skinparam rectangle<<11>> {
+  BackgroundColor #dddddd
+  FontColor #000000
+  BorderColor #9a9a9a
+}
+skinparam rectangle<<22>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
@@ -75,32 +75,32 @@ skinparam rectangle<<20>> {
   FontColor #000000
   BorderColor #9a9a9a
 }
-skinparam database<<54>> {
-  BackgroundColor #1168bd
-  FontColor #ffffff
-  BorderColor #0b4884
-}
 skinparam rectangle<<32>> {
   BackgroundColor #dddddd
   FontColor #000000
   BorderColor #9a9a9a
+}
+skinparam database<<54>> {
+  BackgroundColor #1168bd
+  FontColor #ffffff
+  BorderColor #0b4884
 }
 database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, category, customers, bills, accounts, etc" <<54>> as 54
 rectangle "==Message system\n<size:10>[Software System]</size>\n\nInformation of bills" <<70>> as 70
 rectangle "==Transportation System\n<size:10>[Software System]</size>\n\nDeliver shoes to customers" <<66>> as 66
 rectangle "==Web Application\n<size:10>[Container: JS and VueJs]</size>\n\nDelivers the static content of shoes website" <<4>> as 4
 package "API Application\n[Container: ASP.NET core and C#]" {
-  rectangle "==Bill Component\n<size:10>[Component]</size>\n\nProvides functions such as viewing, deleting, editing all bills." <<34>> as 34
-  rectangle "==Bill Controller\n<size:10>[Component]</size>\n\nAllows users to view the latest paid bill and old bills." <<20>> as 20
-  rectangle "==Cart Controller\n<size:10>[Component]</size>\n\nAllows users to view products added to the cart, manage it." <<16>> as 16
-  rectangle "==Category Controller\n<size:10>[Component]</size>\n\nCategorizes the products in the website." <<22>> as 22
-  rectangle "==Information Component\n<size:10>[Component]</size>\n\nProvides functions such as sending necessary information to the Transportation system and sending information of bills to users." <<24>> as 24
-  rectangle "==Manager Component\n<size:10>[Component]</size>\n\nProvides functions such as filtering products following categories, adding to favorite lists, viewing product details, and adding to cart." <<29>> as 29
-  rectangle "==Order Component\n<size:10>[Component]</size>\n\nProvides functions such as editing, deleting products in the cart, making payments." <<32>> as 32
-  rectangle "==Register Controller\n<size:10>[Component]</size>\n\nAllows users to register to use all functions of the web." <<11>> as 11
-  rectangle "==Security Component\n<size:10>[Component]</size>\n\nProvides functionality related to register, signing in etc." <<26>> as 26
-  rectangle "==Sign In Controller\n<size:10>[Component]</size>\n\nAllows users to login to the website." <<14>> as 14
-  rectangle "==View Controller\n<size:10>[Component]</size>\n\nAllows users to view list of products and interact with product." <<18>> as 18
+  rectangle "==Bill Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvides functions such as viewing, deleting, editing all bills." <<34>> as 34
+  rectangle "==Bill Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows users to view the latest paid bill and old bills." <<20>> as 20
+  rectangle "==Cart Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows users to view products added to the cart, manage it." <<16>> as 16
+  rectangle "==Category Controller\n<size:10>[Component: ASP.NET core]</size>\n\nCategorizes the products in the website." <<22>> as 22
+  rectangle "==Information Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvides functions such as sending necessary information to the Transportation system and sending information of bills to users." <<24>> as 24
+  rectangle "==Manager Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvides functions such as filtering products following categories, adding to favorite lists, viewing product details, and adding to cart." <<29>> as 29
+  rectangle "==Order Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvides functions such as editing, deleting products in the cart, making payments." <<32>> as 32
+  rectangle "==Register Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows users to register to use all functions of the web." <<11>> as 11
+  rectangle "==Security Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvides functionality related to register, signing in etc." <<26>> as 26
+  rectangle "==Sign In Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows users to login to the website." <<14>> as 14
+  rectangle "==View Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows users to view list of products and interact with product." <<18>> as 18
 }
 34 .[#707070,thickness=2].> 54 : "Reads from and writes to"
 20 .[#707070,thickness=2].> 34 : "Uses"

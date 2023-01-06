@@ -63,14 +63,14 @@ skinparam database<<54>> {
 database "==Database\n<size:10>[Container: SQL server 2019]</size>\n\nStore products, category, customers, bills, accounts, etc" <<54>> as 54
 rectangle "==Single Page Application Admin\n<size:10>[Container: Apache]</size>\n\nServer static website assets to customer" <<7>> as 7
 package "API Administration\n[Container: ASP.NET core and C#]" {
-  rectangle "==Account Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting accounts." <<48>> as 48
-  rectangle "==Account Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all accounts in the website." <<40>> as 40
-  rectangle "==Categories Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all category in the website." <<44>> as 44
-  rectangle "==Category Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting category." <<52>> as 52
-  rectangle "==Customer Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting customers." <<50>> as 50
-  rectangle "==Customer Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all customer in the website." <<42>> as 42
-  rectangle "==Product Component\n<size:10>[Component]</size>\n\nProvide functions such as adding, editing, deleting products." <<46>> as 46
-  rectangle "==Product Controller\n<size:10>[Component]</size>\n\nAllows administrators to manage all products in the website." <<38>> as 38
+  rectangle "==Account Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvide functions such as editing, deleting accounts." <<48>> as 48
+  rectangle "==Account Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows administrators to manage all accounts in the website." <<40>> as 40
+  rectangle "==Categories Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows administrators to manage all category in the website." <<44>> as 44
+  rectangle "==Category Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvide functions such as adding, editing, deleting category." <<52>> as 52
+  rectangle "==Customer Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvide functions such as adding, editing, deleting customers." <<50>> as 50
+  rectangle "==Customer Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows administrators to manage all customer in the website." <<42>> as 42
+  rectangle "==Product Component\n<size:10>[Component: ASP.NET core]</size>\n\nProvide functions such as adding, editing, deleting products." <<46>> as 46
+  rectangle "==Product Controller\n<size:10>[Component: ASP.NET core]</size>\n\nAllows administrators to manage all products in the website." <<38>> as 38
 }
 48 .[#707070,thickness=2].> 54 : "Reads from and writes to"
 40 .[#707070,thickness=2].> 48 : "Uses"
